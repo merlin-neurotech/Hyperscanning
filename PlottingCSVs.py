@@ -30,21 +30,29 @@ if match2:
 else:
     print('Start time 2 not found!')
     
-time_offset = abs(starttime_1 - starttime_2) / 0.004 # counts
+time_offset =  int(abs(starttime_1 - starttime_2) / 0.004) # counts
 
-count1 = df1['Counter']
-count2 = df2['Counter']
+startseconds_1 = int(str(starttime_1)[-2:]) #find what second 1 started at
+startseconds_2 = int(str(starttime_2)[-2:]) #find what second 2 started at
 
+ 
 if starttime_1 < starttime_2:
-    count1 = count1 + time_offset
+    #convert counter to seconds, make it realtime w startseconds
+    count1 = startseconds_1 + (df1['Counter'][time_offset:] * 0.004)
+    count2 = startseconds_2 + (df2['Counter'] * 0.004)
+    
+    EEG1_1 = df1['EEG 1'][time_offset:]
+    EEG1_2 = df2['EEG 1']
+
 else:
-    count2 = count2 + time_offset
+    count1 = startseconds_1 + (df1['Counter'] * 0.004)
+    count2 = startseconds_2 + (df2['Counter'][time_offset:] * 0.004)
+    
+    EEG1_1 = df1['EEG 1']
+    EEG1_2 = df2['EEG 1'][time_offset:]
+
 
 plt.figure(dpi=300)
-EEG1_1 = df1['EEG 1'][time_offset:]
-#count1 = df1['Counter'][25:100] * 0.004
-EEG1_2 = df2['EEG 1']
-#count2 = df2['Counter'][25:100] * 0.004
 
 plt.plot(count1, EEG1_1, label='Dataset 1')
 plt.plot(count2, EEG1_2, label='Dataset 2')
