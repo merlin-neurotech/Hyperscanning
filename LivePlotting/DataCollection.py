@@ -10,6 +10,13 @@ Created on Fri Feb  9 11:07:55 2024
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
+import UnicornPy as UniPy
+from neurol import streams
+from neurol.connect_device import get_lsl_EEG_inlets
+from neurol.BCI import generic_BCI, automl_BCI
+from neurol import BCI_tools
+from neurol.models import classification_tools
+from pylsl import StreamInlet, resolve_stream
 
 '''
 GOALS
@@ -20,4 +27,12 @@ GOALS
 - Plot the data live and in parallel
 '''
 
+'''
+Refer to https://github.com/merlin-neurotech/Speller-GPT/blob/main/GPTherAI.py for an example
+'''
+
 #%% Step 1 - Connect to the UNICORN headset
+<<<<<<< HEAD
+=======
+
+>>>>>>> c00bd0d0feab1281f9af05dc34ae030cfe524e5c
