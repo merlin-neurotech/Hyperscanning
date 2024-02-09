@@ -6,5 +6,3 @@ Created on Fri Feb  9 11:07:55 2024
 @author: alossius
 """
 
-# lol
-
