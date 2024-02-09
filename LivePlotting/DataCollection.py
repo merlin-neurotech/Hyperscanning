@@ -32,7 +32,3 @@ Refer to https://github.com/merlin-neurotech/Speller-GPT/blob/main/GPTherAI.py f
 '''
 
 #%% Step 1 - Connect to the UNICORN headset
-<<<<<<< HEAD
-=======
-
->>>>>>> c00bd0d0feab1281f9af05dc34ae030cfe524e5c
